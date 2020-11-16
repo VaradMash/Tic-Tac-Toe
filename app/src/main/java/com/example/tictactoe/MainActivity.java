@@ -1,6 +1,7 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvName;
     Button btnNewGame, btnExit;
     Switch darkTheme;
-    LinearLayout activityLayout;
+    ConstraintLayout activityLayout;
     public static boolean isDark = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
         darkTheme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                {
+                if (isChecked) {
                     Toast.makeText(MainActivity.this, "Switched to Dark Theme!", Toast.LENGTH_SHORT).show();
                     activityLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
                     darkTheme.setText("Switch to Light Theme");
@@ -55,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     darkTheme.setTextColor(getResources().getColor(R.color.colorPrimaryLight));
                     isDark = true;
 
-                }
-                else
-                {
+                } else {
                     activityLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     tvName.setTextColor(getResources().getColor(R.color.colorPrimaryText));
                     darkTheme.setText("Switch to Dark Theme");
@@ -68,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (MainActivity.isDark)
-        {
+        if (MainActivity.isDark) {
             activityLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
             tvName.setTextColor(getResources().getColor(R.color.colorPrimaryLight));
             darkTheme.setTextColor(getResources().getColor(R.color.colorPrimaryLight));
