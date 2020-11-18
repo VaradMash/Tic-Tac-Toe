@@ -1,6 +1,7 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 public class Winner extends AppCompatActivity {
     Button back;
     TextView tvWin;
-    LinearLayout winLayout;
+    ConstraintLayout winLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

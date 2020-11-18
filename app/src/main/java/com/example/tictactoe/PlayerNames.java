@@ -1,6 +1,7 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ public class PlayerNames extends AppCompatActivity {
 
     EditText etPlayer1, etPlayer2;
     Button btnStartGame;
-    LinearLayout layoutNames;
+    ConstraintLayout layoutNames;
 
 
     @Override
@@ -39,15 +40,6 @@ public class PlayerNames extends AppCompatActivity {
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(etPlayer1.getText().toString().isEmpty())
-                {
-                    Toast.makeText(PlayerNames.this, "Enter Player 1 Name!", Toast.LENGTH_SHORT).show();
-                }
-                if (etPlayer2.getText().toString().isEmpty())
-                {
-                    Toast.makeText(PlayerNames.this, "Enter Player 2 Name!", Toast.LENGTH_SHORT).show();
-                }
                 if(etPlayer1.getText().toString().isEmpty() && etPlayer2.getText().toString().isEmpty())
                 {
                     Toast.makeText(PlayerNames.this, "Please Enter all fields !", Toast.LENGTH_SHORT).show();

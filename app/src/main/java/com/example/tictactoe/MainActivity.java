@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btnNewGame = findViewById(R.id.btnNewGame);
         btnExit = findViewById(R.id.btnExit);
         darkTheme = findViewById(R.id.darkTheme);
+        darkTheme.setChecked(false);
         activityLayout = findViewById(R.id.activityLayout);
         //Jump to new activity. No result expected
         btnNewGame.setOnClickListener(new View.OnClickListener() {

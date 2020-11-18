@@ -1,6 +1,7 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +15,11 @@ import android.widget.Toast;
 
 public class Game extends AppCompatActivity {
 
-    TextView tvPlayer1Name, tvPlayer2Name;
+    TextView tvPlayer1Name, tvPlayer2Name, tvX, tvO;
     Button btn00, btn01, btn02, btn10, btn11, btn12, btn20, btn21, btn22, btnBack;
     ImageView undo;
     String player1, player2;
-    LinearLayout mainLayout, mainLayout2, grid, outerlayout;
+    ConstraintLayout outerlayout;
     int[][] gameArray = new int[3][3];
     int turn = 0,i, j;
 
@@ -127,7 +128,7 @@ public class Game extends AppCompatActivity {
         player2 = getIntent().getStringExtra("player2");
         tvPlayer1Name.setText(player1);
         tvPlayer2Name.setText(player2);
-
+        //Game buttons
         btn00 = findViewById(R.id.btn00);
         btn01 = findViewById(R.id.btn01);
         btn02 = findViewById(R.id.btn02);
@@ -137,21 +138,25 @@ public class Game extends AppCompatActivity {
         btn20 = findViewById(R.id.btn20);
         btn21 = findViewById(R.id.btn21);
         btn22 = findViewById(R.id.btn22);
+
+        //back button
         btnBack = findViewById(R.id.btnBack);
-        mainLayout = findViewById(R.id.mainLayout);
-        mainLayout2 = findViewById(R.id.mainLayout2);
-        grid = findViewById(R.id.grid);
         outerlayout = findViewById(R.id.outerlayout);
 
+        tvX = findViewById(R.id.tvX);
+        tvO = findViewById(R.id.tvO);
         //check for dark theme application
-
         if (MainActivity.isDark)
         {
-            mainLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
-            mainLayout2.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
-            grid.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
+            tvPlayer1Name.setTextColor(getResources().getColor(R.color.colorAccent));
+            tvPlayer2Name.setTextColor(getResources().getColor(R.color.colorAccent));
+            tvPlayer1Name.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
+            tvPlayer2Name.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
+            tvX.setTextColor(getResources().getColor(R.color.colorAccent));
+            tvO.setTextColor(getResources().getColor(R.color.colorAccent));
+            tvX.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
+            tvO.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
             outerlayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryText));
-
         }
 
         //set button clicks
